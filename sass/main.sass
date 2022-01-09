@@ -1,6 +1,7 @@
 @use '../sass/abstracts'
 @use '../sass/pages'
 @import './components/_menu'
+@import './layout/_footer'
 body
     background: map-get(abstracts.$colors,"primary" )
     color: map-get(abstracts.$colors,"white" )
@@ -24,21 +25,3 @@ header
 main
     width: 100%
     height: 100%
-    .social-icons
-        position: fixed
-        bottom: 1rem
-        left: 1rem
-        a
-            padding: .4rem
-            @include abstracts.transition-ease()
-            &:hover
-                color: map-get(abstracts.$colors,"secendary" )
-
-footer
-    font-size: 1rem
-    position: fixed
-    bottom: .4rem
-    right: 1rem
-    text-align: right
-    padding: 1rem
-    color: map-get(abstracts.$colors,"white" )
