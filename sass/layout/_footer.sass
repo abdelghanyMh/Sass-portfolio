@@ -1,0 +1,25 @@
+main
+    .social-icons
+        position: fixed
+        bottom: 1rem
+        left: 1rem
+        a
+            padding: .4rem
+            @include abstracts.transition-ease()
+            &:hover
+                color: map-get(abstracts.$colors,"secendary" )
+
+footer
+    font-size: 1rem
+    position: fixed
+    bottom: .4rem
+    right: 1rem
+    text-align: right
+    padding: 1rem
+    color: map-get(abstracts.$colors,"white" )
+.social-icons__vertical
+    display: flex
+    flex-direction: column
+
+.footer__vertical
+    transform: rotate(90deg) translate(-3rem,-5rem)
