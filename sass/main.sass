@@ -1,5 +1,5 @@
 @use '../sass/abstracts'
-@import './pages/_home'
+@use '../sass/pages'
 @import './components/_menu'
 body
     background: map-get(abstracts.$colors,"primary" )
@@ -13,6 +13,9 @@ h1,h2,h3
 a
     color: map-get(abstracts.$colors,"white" )
     text-decoration: none
+.text-secondary
+    color: map-get(abstracts.$colors,"secendary" )
+
 header
     position: fixed
     z-index: 2
