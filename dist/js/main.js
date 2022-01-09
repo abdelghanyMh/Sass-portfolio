@@ -3,6 +3,7 @@ const humburger = document.querySelector(".menu-btn__burger");
 
 // used to display nav menu 
 const menuNav = document.querySelector(".menu-nav");
+const navBar = document.querySelector(".nav");
 
 // used to display nav menu item  (LINKS)
 const menuNavItems = document.querySelectorAll(".menu-nav__item");
@@ -16,6 +17,7 @@ function toggleMenu() {
         humburger.classList.remove('open')
 
         menuNav.classList.remove('open')
+        navBar.classList.remove('open')
         
         menuNavItems.forEach(item => {
             item.classList.remove('open')
@@ -24,6 +26,7 @@ function toggleMenu() {
     } else {
         humburger.classList.add('open')
         menuNav.classList.add('open')
+        navBar.classList.add('open')
 
         menuNavItems.forEach(item => {
             item.classList.add('open')
