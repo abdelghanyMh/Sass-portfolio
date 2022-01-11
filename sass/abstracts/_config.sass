@@ -9,4 +9,6 @@ $font-weights: ("regular": 400, "medium": 500, "bold": 700)
 @mixin transition-ease()
     transition: all .5s ease-in-out
 
+@function get-color($color)
+   @return map-get($colors,$color )
 

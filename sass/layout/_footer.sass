@@ -7,7 +7,7 @@ main
             padding: .4rem
             @include abstracts.transition-ease()
             &:hover
-                color: map-get(abstracts.$colors,"secendary" )
+                color: abstracts.get-color("secendary" )
 
 footer
     font-size: 1rem
@@ -16,7 +16,7 @@ footer
     right: 1rem
     text-align: right
     padding: 1rem
-    color: map-get(abstracts.$colors,"white" )
+    color: abstracts.get-color("white" )
 .social-icons__vertical
     display: flex
     flex-direction: column

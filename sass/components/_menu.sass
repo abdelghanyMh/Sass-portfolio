@@ -3,7 +3,7 @@
     position: absolute
     width: 28px
     height: 3px
-    background: map-get(abstracts.$colors,"white" )
+    background: abstracts.get-color("white" )
     @include abstracts.transition-ease()
 
 .menu-btn
@@ -55,7 +55,7 @@
         justify-content: center
         align-items: center
         overflow: hidden
-        background: map-get(abstracts.$colors,"primary" )
+        background: abstracts.get-color("primary" )
         list-style-type: none
         padding-right: 1rem
         transform: translateY(-100%)
@@ -68,7 +68,7 @@
             &.open
                 transform: translateX(0)
             &.active > a
-                color: map-get(abstracts.$colors,"secendary" )
+                color: abstracts.get-color("secendary" )
         &__link
             display: inline-block
             font-size: 2rem
@@ -77,7 +77,7 @@
             font-weight: 300
             @include abstracts.transition-ease
             &:hover
-                color: map-get(abstracts.$colors,"secendary")
+                color: abstracts.get-color("secendary")
 
 // adding transition-delay to make suquential slide-in animation
 @for $i from 1 through 4
