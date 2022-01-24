@@ -5,7 +5,7 @@
     height: 3px
     background: abstracts.get-color("white" )
     @include abstracts.transition-ease()
-
+// button style
 .menu-btn
     position: absolute
     z-index: 1
@@ -18,15 +18,17 @@
     &__burger
         @extend %hamburger_common_style
         top: 1rem
-        &::before
+        &::before,&::after
             content: ''
             @extend %hamburger_common_style
+        &::before
             top: -8px
         &::after
-            content: ''
-            @extend %hamburger_common_style
             width: 20px
             top: 8px
+
+        // button animation
+
         &.open
             transform: rotate(720deg)
             background: transparent
@@ -37,6 +39,7 @@
                 width: 28px
                 top: -4px
                 transform: rotate(-45deg)
+// nav list style
 .nav
     position: fixed
     top: 0
@@ -60,6 +63,9 @@
         padding-right: 1rem
         transform: translateY(-100%)
         @include abstracts.transition-ease()
+
+        // nav list anaimtions
+
         &.open
             transform: translateY(0)
         &__item
