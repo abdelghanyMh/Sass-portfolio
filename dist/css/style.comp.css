@@ -4,14 +4,59 @@
   padding: 0;
 }
 
+body {
+  background: #242424;
+  color: #fff;
+  height: 100vh;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  line-height: 1;
+}
+
+h1, h2, h3 {
+  font-weight: 400;
+}
+
+a {
+  color: #fff;
+  text-decoration: none;
+}
+
+.text-secondary {
+  color: #ff652f;
+}
+
+header {
+  position: fixed;
+  z-index: 2;
+  width: 100%;
+  padding: 1rem;
+}
+
+main {
+  width: 100%;
+  height: 100%;
+}
+
+/* 0 - 600px:      Phone
+ * 600 - 900px:    Tablet portrait
+ * 900 - 1200px:   Tablet landscape
+ * [1200 - 1800] is where our normal styles apply
+ * 1800px + :      Big desktop
+ *
+ *  $breakpoint arguement choices: 
+ *      - tab-port
+ *      - tab-land
+ *      - big-desktop
+ *      1em = 16px */
 .home {
+  background: linear-gradient(to right, rgba(36, 36, 36, 0.9), rgba(36, 36, 36, 0.3)), url("../img/model-1.jpg");
+  background-size: cover;
+  background-position: center top;
   height: 100%;
   padding-top: 40vh;
   overflow: hidden;
   align-items: center;
   text-align: center;
-  background: linear-gradient(to right, rgba(36, 36, 36, 0.9), rgba(36, 36, 36, 0.3)), url("../img/model-1.jpg");
-  background-size: cover;
 }
 .home__name {
   font-size: 5rem;
@@ -28,10 +73,11 @@
   padding-bottom: 2rem;
 }
 .about__bio-image {
-  height: 50vh;
-  width: 100%;
   background: linear-gradient(to right, rgba(36, 36, 36, 0.9), rgba(36, 36, 36, 0.3)), url("../img/model-1.jpg");
   background-size: cover;
+  background-position: center top;
+  height: 50vh;
+  width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -39,6 +85,12 @@
 }
 .about p {
   margin-bottom: 2rem;
+}
+@media only screen and (min-width: 75em) {
+  .about p {
+    font-size: 1.5rem;
+    font-weight: 100;
+  }
 }
 .about__bio {
   width: 80%;
@@ -69,22 +121,51 @@
   transform: rotate(90deg) translate(-3rem, -5rem);
 }
 
+@media only screen and (min-width: 75em) {
+  .text-secondary {
+    font-size: 3rem;
+    margin-bottom: 2rem;
+  }
+
+  h6, h3 {
+    margin-bottom: 1rem;
+  }
+
+  h3 {
+    font-size: 1.7rem;
+  }
+
+  h6 {
+    font-size: 1.5rem;
+  }
+}
 .projects {
   padding-bottom: 2rem;
 }
 .projects__bio-image {
-  height: 30vh;
-  width: 100%;
   background: linear-gradient(to right, rgba(36, 36, 36, 0.9), rgba(36, 36, 36, 0.3)), url("../img/model-1.jpg");
   background-size: cover;
+  background-position: center top;
+  height: 30vh;
+  width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: flex-end;
 }
+@media only screen and (min-width: 75em) {
+  .projects__bio-image {
+    height: 40vh;
+  }
+}
 .projects .text-secondary {
   font-size: 2rem;
   margin-bottom: 2rem;
+}
+@media only screen and (min-width: 75em) {
+  .projects .text-secondary {
+    font-size: 3rem;
+  }
 }
 .projects__items {
   width: 60vw;
@@ -92,6 +173,16 @@
   display: grid;
   grid-template-columns: 1fr;
   grid-gap: 2rem;
+}
+@media only screen and (min-width: 56.25em) {
+  .projects__items {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media only screen and (min-width: 75em) {
+  .projects__items {
+    grid-template-columns: repeat(3, 1fr);
+  }
 }
 .projects__item {
   overflow: hidden;
@@ -160,19 +251,84 @@
   grid-gap: 2rem;
   font-size: 1.5rem;
 }
+@media only screen and (min-width: 56.25em) {
+  .contact__list {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media only screen and (min-width: 75em) {
+  .contact__list {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
 
 .social-icons__contact {
   position: initial;
   margin-top: 2rem;
 }
+@media only screen and (min-width: 75em) {
+  .social-icons__contact > a:not(:last-child) {
+    margin-right: 1rem;
+  }
+}
 
+@media only screen and (min-width: 75em) {
+  .text-secondary {
+    font-size: 1.5rem;
+    margin-top: 1rem;
+  }
+}
 * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
 }
 
-.menu-btn__burger::after, .menu-btn__burger::before, .menu-btn__burger {
+body {
+  background: #242424;
+  color: #fff;
+  height: 100vh;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  line-height: 1;
+}
+
+h1, h2, h3 {
+  font-weight: 400;
+}
+
+a {
+  color: #fff;
+  text-decoration: none;
+}
+
+.text-secondary {
+  color: #ff652f;
+}
+
+header {
+  position: fixed;
+  z-index: 2;
+  width: 100%;
+  padding: 1rem;
+}
+
+main {
+  width: 100%;
+  height: 100%;
+}
+
+/* 0 - 600px:      Phone
+ * 600 - 900px:    Tablet portrait
+ * 900 - 1200px:   Tablet landscape
+ * [1200 - 1800] is where our normal styles apply
+ * 1800px + :      Big desktop
+ *
+ *  $breakpoint arguement choices: 
+ *      - tab-port
+ *      - tab-land
+ *      - big-desktop
+ *      1em = 16px */
+.menu-btn__burger::before, .menu-btn__burger::after, .menu-btn__burger {
   position: absolute;
   width: 28px;
   height: 3px;
@@ -190,15 +346,21 @@
   cursor: pointer;
   transition: all 0.5s ease-in-out;
 }
+@media only screen and (min-width: 75em) {
+  .menu-btn {
+    display: none;
+  }
+}
 .menu-btn__burger {
   top: 1rem;
 }
-.menu-btn__burger::before {
+.menu-btn__burger::before, .menu-btn__burger::after {
   content: "";
+}
+.menu-btn__burger::before {
   top: -8px;
 }
 .menu-btn__burger::after {
-  content: "";
   width: 20px;
   top: 8px;
 }
@@ -224,11 +386,17 @@
   visibility: hidden;
   opacity: 0.98;
 }
+@media only screen and (min-width: 75em) {
+  .nav {
+    visibility: visible;
+  }
+}
 .nav.open {
   visibility: visible;
 }
 .nav .menu-nav {
   height: 100vh;
+  padding-right: 1rem;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -236,9 +404,17 @@
   overflow: hidden;
   background: #242424;
   list-style-type: none;
-  padding-right: 1rem;
   transform: translateY(-100%);
   transition: all 0.5s ease-in-out;
+}
+@media only screen and (min-width: 75em) {
+  .nav .menu-nav {
+    transform: translateY(0);
+    height: 100%;
+    background: transparent;
+    justify-content: flex-end;
+    flex-direction: row;
+  }
 }
 .nav .menu-nav.open {
   transform: translateY(0);
@@ -253,6 +429,15 @@
 .nav .menu-nav__item.active > a {
   color: #ff652f;
 }
+@media only screen and (min-width: 75em) {
+  .nav .menu-nav__item {
+    transform: translateX(0);
+    margin-right: 1rem;
+  }
+  .nav .menu-nav__item:last-child {
+    margin-right: 2rem;
+  }
+}
 .nav .menu-nav__link {
   display: inline-block;
   font-size: 2rem;
@@ -264,7 +449,6 @@
 .nav .menu-nav__link:hover {
   color: #ff652f;
 }
-
 .menu-nav__item:nth-child(1) {
   transition-delay: 0.2s;
 }
@@ -312,38 +496,3 @@ footer {
 .footer__vertical {
   transform: rotate(90deg) translate(-3rem, -5rem);
 }
-
-body {
-  background: #242424;
-  color: #fff;
-  height: 100vh;
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-  line-height: 1;
-}
-
-h1, h2, h3 {
-  font-weight: 400;
-}
-
-a {
-  color: #fff;
-  text-decoration: none;
-}
-
-.text-secondary {
-  color: #ff652f;
-}
-
-header {
-  position: fixed;
-  z-index: 2;
-  width: 100%;
-  padding: 1rem;
-}
-
-main {
-  width: 100%;
-  height: 100%;
-}
-
-/*# sourceMappingURL=main.css.map */
