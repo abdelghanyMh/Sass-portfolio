@@ -2,17 +2,21 @@
 .projects
     padding-bottom: 2rem
     &__bio-image
-        height: 30vh
+        @include abstracts.bio-image($height:30vh)
         width: 100%
-        background: linear-gradient(to right,rgba(map-get(abstracts.$colors,"primary" ), 0.9),rgba(map-get(abstracts.$colors,"primary" ), 0.3)),url('../img/model-1.jpg')
-        background-size: cover
+
         display: flex
         flex-direction: column
         align-items: center
         justify-content: flex-end
+        @include abstracts.respond(desktop)
+            height: 40vh
+
     .text-secondary
         font-size: 2rem
         margin-bottom: 2rem
+        @include abstracts.respond(desktop)
+            font-size: 3rem
 
     &__items
         width: 60vw
@@ -20,6 +24,12 @@
         display: grid
         grid-template-columns: 1fr
         grid-gap: 2rem
+
+        @include abstracts.respond(tab-land)
+            grid-template-columns: repeat(2,1fr)
+        @include abstracts.respond(desktop)
+            grid-template-columns: repeat(3,1fr)
+
     &__item
         overflow: hidden
         position: relative
