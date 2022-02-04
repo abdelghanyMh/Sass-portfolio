@@ -1,12 +1,11 @@
 @use '../abstracts'
 .home
-    height: 100%
+    @include abstracts.bio-image($height:100%)
     padding-top: 40vh
     overflow: hidden
     align-items: center
     text-align: center
-    background : linear-gradient(to right,rgba(map-get(abstracts.$colors,"primary" ), 0.9),rgba(map-get(abstracts.$colors,"primary" ), 0.3)),url('../img/model-1.jpg')
-    background-size: cover
+  
     &__name
         font-size: 5rem
         padding-bottom: 1rem
@@ -14,4 +13,4 @@
         border-bottom: 2px solid map-get(abstracts.$colors,"white" )
         &--last
             color: map-get(abstracts.$colors,"secendary")
-            font-weight: map-get(abstracts.$font-weights,"bold")
+            font-weight: abstracts.get-f-weights("bold")
