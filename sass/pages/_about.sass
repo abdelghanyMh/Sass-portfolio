@@ -2,21 +2,26 @@
 .about
     padding-bottom: 2rem
     &__bio-image
-        height: 50vh
-        width:  100%
-        background : linear-gradient(to right,rgba(map-get(abstracts.$colors,"primary" ), 0.9),rgba(map-get(abstracts.$colors,"primary" ), 0.3)),url('../img/model-1.jpg')
-        background-size: cover
+        @include abstracts.bio-image($height:50vh)
+
+        width: 100%
+
         display: flex
         flex-direction: column
         align-items: center
         justify-content: flex-end
+
     p
         margin-bottom: 2rem
+        @include abstracts.respond(desktop)
+            font-size: 1.5rem
+            font-weight: abstracts.get-f-weights("Petite")
     &__bio
-        width:80%
+        width: 80%
         text-align: center
         .text-secondary
             margin-bottom: 1rem
+
     .jobs
         width: 60vw
         margin: 2rem auto 0
@@ -27,10 +32,22 @@
             background: lighten(map-get(abstracts.$colors,"primary" ), 10%)
             padding: .5rem
             border-bottom: 5px solid map-get(abstracts.$colors,"secendary" )
+
 .social-icons_about
     display: flex
     flex-direction: column
 
-
 .footer__about
     transform: rotate(90deg) translate(-3rem,-5rem)
+
+// replace it by changing the default font size 
+@include abstracts.respond(desktop)
+    .text-secondary
+        font-size: 3rem
+        margin-bottom: 2rem
+    h6,h3
+        margin-bottom: 1rem
+    h3
+        font-size: 1.7rem
+    h6
+        font-size: 1.5rem
