@@ -1,7 +1,8 @@
+/* Toggle  functionalty to nav */
 const menuBtn = document.querySelector(".menu-btn");
 const humburger = document.querySelector(".menu-btn__burger");
 
-// used to display nav menu 
+// used to display nav menu
 const menuNav = document.querySelector(".menu-nav");
 const navBar = document.querySelector(".nav");
 
@@ -18,7 +19,7 @@ function toggleMenu() {
 
         menuNav.classList.remove('open')
         navBar.classList.remove('open')
-        
+
         menuNavItems.forEach(item => {
             item.classList.remove('open')
         })
@@ -33,5 +34,23 @@ function toggleMenu() {
         })
     }
 }
+
+// change the header background color on scroll
+
+function changeHeaderBgClr() {
+    if (window.scrollY > 90) {
+        menuNav.style.backgroundColor = "#242424";
+        menuNav.style.borderBottom = "1px solid";
+    } else {
+        menuNav.style.borderBottom = "none";
+        menuNav.style.backgroundColor = "transparent";
+
+    }
+
+
+
+}
+
 // event listeners
 menuBtn.addEventListener('click', toggleMenu)
+document.addEventListener('scroll', changeHeaderBgClr)
