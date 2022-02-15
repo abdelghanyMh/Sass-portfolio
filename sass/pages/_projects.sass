@@ -20,20 +20,26 @@
 
     &__items
         width: 60vw
-        margin: 2rem auto 0
+        margin: 5rem auto 0
         display: grid
-        grid-template-columns: 1fr
-        grid-gap: 2rem
+        grid-template-columns: repeat( auto-fit , minmax(15rem, 1fr) )
+        grid-gap: 5rem
 
-        @include abstracts.respond(tab-land)
-            grid-template-columns: repeat(2,1fr)
-        @include abstracts.respond(desktop)
-            grid-template-columns: repeat(3,1fr)
+        @supports not (display: grid)
+            & > *
+                margin-bottom: 5rem
+
+            .projects__btns
+                position: absolute
+                top: 50%
+
+                & > :first-child
+                    margin-right: 50px
 
     &__item
         overflow: hidden
         position: relative
-        border-bottom: 5px solid map-get(abstracts.$colors,"secendary" )
+        border-bottom: 5px solid abstracts.get-color("secendary" )
         cursor: pointer
         img
             width: 100%
@@ -47,8 +53,7 @@
             height: 100%
             width: 100%
 
-            opacity: 0
-            background: map-get(abstracts.$colors,"secendary" )
+            background: abstracts.get-color("secendary" )
 
             @include abstracts.transition-ease
 
@@ -72,10 +77,17 @@
         grid-template-columns: repeat(2,1fr)
         align-items: center
         text-align: center
+        @supports not (align-items: center)
+            & > *
+                margin: 10rem
+
     &__btn
-        color: map-get(abstracts.$colors,"primary" )
-        opacity: 0
+        font-size: 2rem
+        margin: 25% auto
+
+        color: abstracts.get-color("white" )
+        opacity: 1
         @include abstracts.transition-ease
 
         &:hover
-            color: map-get(abstracts.$colors,"white" )
+            color: abstracts.get-color("primary")
