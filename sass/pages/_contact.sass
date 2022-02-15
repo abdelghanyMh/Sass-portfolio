@@ -1,31 +1,46 @@
 @use '../abstracts'
 .contact
-    height: 100%
-    padding-top: 40vh
+    @include abstracts.bio-image($height:100%)
+
+    padding-top: 25vh
     overflow: hidden
 
     display: flex
     flex-direction: column
     align-items: center
-    background: linear-gradient(to right,rgba(map-get(abstracts.$colors,"primary" ), 0.9),rgba(map-get(abstracts.$colors,"primary" ), 0.3)),url('../img/model-1.jpg')
-    background-size: cover
+    @include abstracts.respond(tab-land)
+        padding-top: 40vh
+        justify-content: space-evenly
+
     h2
         font-size: 3rem
-        margin-bottom: 2rem
+        margin-bottom: 1rem
+        @include abstracts.respond(tab-land)
+            margin-bottom: 2rem
+
     &__list
         display: grid
-        grid-template-columns: 1fr
+        width: 61%
+
+        // grid-template-columns: 1fr
         grid-gap: 2rem
         font-size: 1.5rem
+        margin-top: 5rem
+        grid-template-columns: repeat( auto-fit , minmax(21rem, 1fr) )
 
-        @include abstracts.respond(tab-land)
-            grid-template-columns: repeat(2,1fr)
+        @supports not (grid-gap: 7rem)
+            & > *
+                margin-bottom: 2rem
 
-        @include abstracts.respond(desktop)
-            grid-template-columns: repeat(3,1fr)
+        // @include abstracts.respond(tab-land)
+        //     grid-template-columns: repeat(2,1fr)
+
+        // @include abstracts.respond(desktop)
+        //     width: 61%
+        //     grid-template-columns: repeat(3,1fr)
 
 .social-icons__contact
-    position: initial
+    position: unset !important
     margin-top: 2rem
     @include abstracts.respond(desktop)
         & > a:not(:last-child)
