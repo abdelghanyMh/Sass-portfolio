@@ -1,42 +1,3 @@
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
-
-body {
-  background: #242424;
-  color: #fff;
-  height: 100vh;
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-  line-height: 1;
-}
-
-h1, h2, h3 {
-  font-weight: 400;
-}
-
-a {
-  color: #fff;
-  text-decoration: none;
-}
-
-.text-secondary {
-  color: #ff652f;
-}
-
-header {
-  position: fixed;
-  z-index: 2;
-  width: 100%;
-  padding: 1rem;
-}
-
-main {
-  width: 100%;
-  height: 100%;
-}
-
 /* 0 - 600px:      Phone
  * 600 - 900px:    Tablet portrait
  * 900 - 1200px:   Tablet landscape
@@ -69,6 +30,10 @@ main {
   font-weight: 700;
 }
 
+h2 {
+  padding-top: 1rem;
+}
+
 .about {
   padding-bottom: 2rem;
 }
@@ -84,11 +49,11 @@ main {
   justify-content: flex-end;
 }
 .about p {
+  font-size: 1.5rem;
   margin-bottom: 2rem;
 }
 @media only screen and (min-width: 75em) {
   .about p {
-    font-size: 1.5rem;
     font-weight: 100;
   }
 }
@@ -100,15 +65,20 @@ main {
   margin-bottom: 1rem;
 }
 .about .jobs {
-  width: 60vw;
+  width: 67vw;
   margin: 2rem auto 0;
   display: grid;
   grid-template-columns: 1fr;
   grid-gap: 2rem;
 }
+@supports not (grid-gap: 7rem) {
+  .about .jobs > * {
+    margin-bottom: 5rem;
+  }
+}
 .about .jobs__job {
   background: #3e3e3e;
-  padding: 0.5rem;
+  padding: 0.5rem 1rem 0;
   border-bottom: 5px solid #ff652f;
 }
 
@@ -121,14 +91,14 @@ main {
   transform: rotate(90deg) translate(-3rem, -5rem);
 }
 
+h6 {
+  margin: 0.5rem 0;
+}
+
 @media only screen and (min-width: 75em) {
   .text-secondary {
     font-size: 3rem;
     margin-bottom: 2rem;
-  }
-
-  h6, h3 {
-    margin-bottom: 1rem;
   }
 
   h3 {
@@ -137,6 +107,7 @@ main {
 
   h6 {
     font-size: 1.5rem;
+    margin: 1rem 0;
   }
 }
 .projects {
@@ -169,19 +140,21 @@ main {
 }
 .projects__items {
   width: 60vw;
-  margin: 2rem auto 0;
+  margin: 5rem auto 0;
   display: grid;
-  grid-template-columns: 1fr;
-  grid-gap: 2rem;
+  grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+  grid-gap: 5rem;
 }
-@media only screen and (min-width: 56.25em) {
-  .projects__items {
-    grid-template-columns: repeat(2, 1fr);
+@supports not (display: grid) {
+  .projects__items > * {
+    margin-bottom: 5rem;
   }
-}
-@media only screen and (min-width: 75em) {
-  .projects__items {
-    grid-template-columns: repeat(3, 1fr);
+  .projects__items .projects__btns {
+    position: absolute;
+    top: 50%;
+  }
+  .projects__items .projects__btns > :first-child {
+    margin-right: 50px;
   }
 }
 .projects__item {
@@ -200,7 +173,6 @@ main {
   left: 0;
   height: 100%;
   width: 100%;
-  opacity: 0;
   background: #ff652f;
   transition: all 0.5s ease-in-out;
 }
@@ -222,48 +194,64 @@ main {
   align-items: center;
   text-align: center;
 }
+@supports not (align-items: center) {
+  .projects__btns > * {
+    margin: 10rem;
+  }
+}
 .projects__btn {
-  color: #242424;
-  opacity: 0;
+  font-size: 2rem;
+  margin: 25% auto;
+  color: #fff;
+  opacity: 1;
   transition: all 0.5s ease-in-out;
 }
 .projects__btn:hover {
-  color: #fff;
+  color: #242424;
 }
 
 .contact {
+  background: linear-gradient(to right, rgba(36, 36, 36, 0.9), rgba(36, 36, 36, 0.3)), url("../img/model-1.jpg");
+  background-size: cover;
+  background-position: center top;
   height: 100%;
-  padding-top: 40vh;
+  padding-top: 25vh;
   overflow: hidden;
   display: flex;
   flex-direction: column;
   align-items: center;
-  background: linear-gradient(to right, rgba(36, 36, 36, 0.9), rgba(36, 36, 36, 0.3)), url("../img/model-1.jpg");
-  background-size: cover;
+}
+@media only screen and (min-width: 56.25em) {
+  .contact {
+    padding-top: 40vh;
+    justify-content: space-evenly;
+  }
 }
 .contact h2 {
   font-size: 3rem;
-  margin-bottom: 2rem;
+  margin-bottom: 1rem;
+}
+@media only screen and (min-width: 56.25em) {
+  .contact h2 {
+    margin-bottom: 2rem;
+  }
 }
 .contact__list {
   display: grid;
-  grid-template-columns: 1fr;
+  width: 61%;
   grid-gap: 2rem;
   font-size: 1.5rem;
+  margin-top: 5rem;
+  grid-template-columns: repeat(auto-fit, minmax(21rem, 1fr));
 }
-@media only screen and (min-width: 56.25em) {
-  .contact__list {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-@media only screen and (min-width: 75em) {
-  .contact__list {
-    grid-template-columns: repeat(3, 1fr);
+@supports not (grid-gap: 7rem) {
+  .contact__list > * {
+    margin-bottom: 2rem;
   }
 }
 
 .social-icons__contact {
-  position: initial;
+  position: unset !important;
   margin-top: 2rem;
 }
 @media only screen and (min-width: 75em) {
@@ -284,6 +272,20 @@ main {
   padding: 0;
 }
 
+html {
+  font-size: 62.5%;
+}
+@media only screen and (min-width: 56.25em) {
+  html {
+    font-size: 70%;
+  }
+}
+@media only screen and (min-width: 75em) {
+  html {
+    font-size: 76%;
+  }
+}
+
 body {
   background: #242424;
   color: #fff;
@@ -294,6 +296,11 @@ body {
 
 h1, h2, h3 {
   font-weight: 400;
+  font-size: 1.5rem;
+}
+
+h6 {
+  font-size: 1.5rem;
 }
 
 a {
@@ -302,6 +309,9 @@ a {
 }
 
 .text-secondary {
+  font-size: 2rem;
+  margin-top: 0.5rem;
+  padding-bottom: 1rem;
   color: #ff652f;
 }
 
@@ -317,17 +327,6 @@ main {
   height: 100%;
 }
 
-/* 0 - 600px:      Phone
- * 600 - 900px:    Tablet portrait
- * 900 - 1200px:   Tablet landscape
- * [1200 - 1800] is where our normal styles apply
- * 1800px + :      Big desktop
- *
- *  $breakpoint arguement choices: 
- *      - tab-port
- *      - tab-land
- *      - big-desktop
- *      1em = 16px */
 .menu-btn__burger::before, .menu-btn__burger::after, .menu-btn__burger {
   position: absolute;
   width: 28px;
@@ -393,13 +392,14 @@ main {
 }
 .nav.open {
   visibility: visible;
+  background: #242424 !important;
 }
 .nav .menu-nav {
   height: 100vh;
   padding-right: 1rem;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: space-evenly;
   align-items: center;
   overflow: hidden;
   background: #242424;
@@ -414,6 +414,14 @@ main {
     background: transparent;
     justify-content: flex-end;
     flex-direction: row;
+  }
+}
+@supports not (justify-content: space-evenly) {
+  .nav .menu-nav:first-child {
+    margin-top: 25%;
+  }
+  .nav .menu-nav > * {
+    margin-bottom: 2rem;
   }
 }
 .nav .menu-nav.open {
@@ -440,7 +448,7 @@ main {
 }
 .nav .menu-nav__link {
   display: inline-block;
-  font-size: 2rem;
+  font-size: 3rem;
   text-transform: uppercase;
   padding: 2rem 0;
   font-weight: 300;
@@ -449,6 +457,12 @@ main {
 .nav .menu-nav__link:hover {
   color: #ff652f;
 }
+@media only screen and (min-width: 75em) {
+  .nav .menu-nav__link {
+    font-size: 2rem;
+  }
+}
+
 .menu-nav__item:nth-child(1) {
   transition-delay: 0.2s;
 }
@@ -487,12 +501,17 @@ footer {
   padding: 1rem;
   color: #fff;
 }
+@media only screen and (min-width: 75em) {
+  footer {
+    transform: rotate(0) translate(0);
+  }
+}
 
 .social-icons__vertical {
   display: flex;
   flex-direction: column;
 }
 
-.footer__vertical {
+.footer__vertical, footer {
   transform: rotate(90deg) translate(-3rem, -5rem);
 }
